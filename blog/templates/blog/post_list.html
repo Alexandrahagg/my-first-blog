@@ -8,24 +8,17 @@
 		<div>
 			<h1><a href="">Welcome to Alexandras' awesome Django Girls Blog</a></h1>
 		</div>
-		
-		<div>		
-			<p>published: 26.11.2016, 15:00</p>
-			<h2><a href="">The first post</a></h2>
-			<p>Hejhej! Välkommen till Alexandras första coola post! Om du läser detta är du nästan lika cool som jag är!</p>
 
-		</div>
-		
+		{% for post in posts %}
 
+			<div>
+				<p>published: {{ post.publiched_date}}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
 
-
-
-		<div>
-			<p> published: 26.11.2016, 15:05</p>
-			<h2><a href="">The second post</a></h2>
-			<p> Om du har läst vidare nu är du snäppet coolare än förut, men fortfarande tyvärr inte lika cool som jag är!</p>
-		</div>
-		
+			</div>	
+			
+		{% endfor %}
 
 	</body>
 </html>
